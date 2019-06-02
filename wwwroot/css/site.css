@@ -2,380 +2,509 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+  white-space: normal !important;
+  text-align: center !important;
+  word-break: break-all !important;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 16px !important;
   }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5 !important;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5 !important;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05) !important;
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+  font-size: 1rem !important;
+  line-height: inherit !important;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+  position: relative !important;
+  min-height: 100% !important;
 }
 
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
-    background-color: #C9DCDA;
+    margin-bottom: 60px !important;
+    background-color: #7F6262 !important;
+    line-height: 1.9 !important;
+    color:white !important;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  white-space: nowrap !important;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    height: 60px !important;
+    line-height: 60px !important; /* Vertically center the text there */
 }
 
 .container {
-    padding-top: 10px;
-    width: 100%;
-    background-color: #F3F8F7;
+    padding-top: 10px !important;
+    width: 100% !important;
+    background-color: #F3F8F7 !important;
 }
 
 .col{
-    text-align:left !important;
+    text-align:left !important ;
 }
 
 .resultclientlist{
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    margin-bottom: 0px !important;
+    padding-left: 0px !important ;
+    padding-right: 0px !important ;
+    margin-bottom: 0px !important ;
 }
 
 .card{
-    margin-bottom:0px !important;
-    border-radius: 0px !important;
+    margin-bottom:0px !important ;
+    border-radius: 0px !important ;
 }
 
 .row{
-    flex-wrap:wrap;
-    display:flex !important;
-    margin-left:15px !important; 
-    margin-right:15px !important;
+    flex-wrap:wrap !important;
+    display:flex !important ;
+    margin-left:15px !important ; 
+    margin-right:15px !important ;
 }
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+    position: relative !important;
+    display: inline-block !important;
+    width: 60px !important;
+    height: 34px !important;
 }
 
     .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
     }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    position: absolute !important;
+    cursor: pointer !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: #ccc !important;
+    -webkit-transition: .4s !important;
+    transition: .4s !important;
 }
 
     .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
+        position: absolute !important;
+        content: "" !important;
+        height: 26px !important;
+        width: 26px !important;
+        left: 4px !important;
+        bottom: 4px !important;
+        background-color: white !important;
+        -webkit-transition: .4s !important;
+        transition: .4s !important;
     }
 
 input:checked + .slider {
-    background-color: #96BAB7;
+    background-color: #96BAB7 !important;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2196F3 !important;
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(26px) !important;
+    -ms-transform: translateX(26px) !important;
+    transform: translateX(26px) !important;
 }
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+    border-radius: 34px !important;
 }
 
     .slider.round:before {
-        border-radius: 50%;
+        border-radius: 50% !important;
     }
 
 /* The container */
 .container_checkbox {
-    display: block;
-    position: relative;
-    padding-left: 40px;
-    padding-right: 10px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
+    display: block !important;
+    position: relative !important;
+    padding-left: 40px !important;
+    padding-right: 10px !important;
+    margin-bottom: 12px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    background: transparent !important;
+    color:lightgray;
 }
 
 /* Hide the browser's default checkbox */
 .container_checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+    position: absolute !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    height: 0 !important;
+    width: 0 !important;
 }
 
 /* Create a custom checkbox */
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 25px !important;
+    width: 25px !important;
+    background-color: #eee !important;
 }
 
 /* On mouse-over, add a grey background color */
 .container_checkbox:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: #ccc !important;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container_checkbox input:checked ~ .checkmark {
-    background-color: #088090;
+    background-color: #088090 !important;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+    content: "" !important;
+    position: absolute !important;
+    display: none !important;
 }
 
 /* Show the checkmark when checked */
 .container_checkbox input:checked ~ .checkmark:after {
-    display: block;
+    display: block !important;
 }
 
 /* Style the checkmark/indicator */
 .container_checkbox .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    left: 9px !important;
+    top: 5px !important;
+    width: 5px !important;
+    height: 10px !important;
+    border: solid white !important;
+    border-width: 0 3px 3px 0 !important;
+    -webkit-transform: rotate(45deg) !important;
+    -ms-transform: rotate(45deg) !important;
+    transform: rotate(45deg) !important;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 150px 200px 200px 200px;
-    grid-template-rows: 50px;
-    grid-gap: 10px;
-    background-color: #E0EBEA;
-    display: flex;
+    display: grid !important;
+    grid-template-columns: 150px 200px 400px ;
+    grid-template-rows: 50px !important;
+    grid-gap: 10px !important;
+    background-color: #747474 !important;
+    display: flex !important;
 }
 
     .grid-container > div {
-        background-color: #CADDDB;
-        text-align: center;
-        padding: 8px 0;
-        font-size: 14px;
+        background-color: #747474 !important;
+        text-align: center !important;
+        padding: 8px 0 !important;
+        font-size: 14px !important;
     }
 
 .nopaddingleft{
     padding-left: 0px !important;
-    display:flex;
+    display:flex !important;
+    color:aliceblue;
 }
 
 .contentflex{
-    display:block;
-    flex-wrap:wrap;
+    display:block !important;
+    flex-wrap:wrap !important;
+
 }
 
 .footeroptions {
-    position: fixed;
-    top: 85%;
-    left: 0%;
-    width: 100%;
+    position: fixed !important;
+    top: 92% !important;
+    bottom: -8%  !important;
+    left: 0% !important;
+    width: 100% !important;
+    background-color: #092418bf;
+    margin-left: 75px !important;
 }
 .footeroptions2 {
-    position: fixed;
-    top: 92%;
-    left: 0%;
-    width: 100%;
+    position: fixed !important;
+    top: 92% !important;
+    left: 0% !important;
+    width: 100% !important;
 }
-.contenido_lista{
-    margin-bottom:100px;
+.contenido_lista {
+    margin-bottom: 100px !important;
+    background-color: #747474 !important;
 }
 
  /*the container must be positioned relative:*/
 .custom-select2 {
-    position: relative;
-    font-family: Arial;
+    position: relative !important;
+    font-family: Arial !important;
 }
 
 .custom-select2 select {
-    display: none; /*hide original SELECT element:*/
+    display: none !important; /*hide original SELECT element:*/
 }
 
 .select-selected {
-    background-color: DodgerBlue;
+    background-color: DodgerBlue !important;
 }
 
     /*style the arrow inside the select element:*/
     .select-selected:after {
-        position: absolute;
-        content: "";
-        top: 14px;
-        right: 10px;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
-        border-color: #fff transparent transparent transparent;
+        position: absolute !important;
+        content: "" !important;
+        top: 14px !important;
+        right: 10px !important;
+        width: 0 !important;
+        height: 0 !important;
+        border: 6px solid transparent !important;
+        border-color: #fff transparent transparent transparent !important;
     }
 
     /*point the arrow upwards when the select box is open (active):*/
     .select-selected.select-arrow-active:after {
-        border-color: transparent transparent #fff transparent;
-        top: 7px;
+        border-color: transparent transparent #fff transparent !important;
+        top: 7px !important;
     }
 
 /*style the items (options), including the selected item:*/
 .select-items div, .select-selected {
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-    user-select: none;
+    color: #ffffff !important;
+    padding: 8px 16px !important;
+    border: 1px solid transparent !important;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent !important;
+    cursor: pointer !important;
+    user-select: none !important;
 }
 
 /*style items (options):*/
 .select-items {
-    position: absolute;
-    background-color: DodgerBlue;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
+    position: absolute !important;
+    background-color: DodgerBlue !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 99 !important;
 }
 
 /*hide the items when the select box is closed:*/
 .select-hide {
-    display: none;
+    display: none !important;
 }
 
 .select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 #customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
 }
 
     #customers td, #customers th {
-        border: 1px solid #ddd;
-        padding: 8px;
+        border: 0px solid #ddd !important;
+        padding: 8px !important;
     }
 
     #customers tr:nth-child(even) {
-        background-color: #f2f2f2;
+        background-color: #f2f2f2 !important;
     }
 
     #customers tr:hover {
-        background-color: #ddd;
+        background-color: #C7C7C7 !important;
     }
 
     #customers th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #588984;
-        color: white;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        text-align: left !important;
+        background-color: #313131 !important;
+        color: white !important;
+    }   
+
+    #customers tr:nth-child(odd) {
+        background: #C8C8C8;
+    }
+
+    #customers tr:nth-child(odd):hover {
+    background: #F0F0F0;
     }
 
 .card-header {
-    background-color: #96BAB7;
+    background-color: #313131 !important;
+    color:lightgray;
 }
 
 .form-control-edited {
-    display: block;
-    max-width: 50%;
-    height: $input-height;
-    padding: $input-padding-y $input-padding-x;
-    font-family: $input-font-family;
-    @include font-size($input-font-size);
-    font-weight: $input-font-weight;
-    line-height: $input-line-height;
-    color: $input-color;
-    background-color: $input-bg;
-    background-clip: padding-box;
-    border: $input-border-width solid $input-border-color;
-    // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS. @include border-radius($input-border-radius, 0);
+    display: block !important;
+    max-width: 50% !important;
+    height: $input-height !important;
+    padding: $input-padding-y $input-padding-x !important;
+    font-family: $input-font-family !important;
+    @include font-size($input-font-size) !important;
+    border-radius:10px;
+    font-weight: $input-font-weight !important;
+    line-height: $input-line-height !important;
+    color: $input-color !important;
+    background-color: $input-bg !important;
+    background-clip: padding-box !important;
+    border: $input-border-width solid $input-border-color !important;
+    // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS. @include border-radius($input-border-radius, 0) !important;
 
-    @include box-shadow($input-box-shadow);
-    @include transition($input-transition);
+    @include box-shadow($input-box-shadow) !important;
+    @include transition($input-transition) !important;
     // Unstyle the caret on `<select>`s in IE10+. &::-ms-expand
 }
 
 .contenedor-formularios {
-    background-color: #B9D0CE;
+    background-color: #B9D0CE !important;
 }
 
 .columnasresultados{
-    min-width:100% !important;
+    min-width:100%  !important;
 }
 
 .highlight {
-    background-color: yellow;
+    background-color: yellow !important;
+}
+
+.col-md{
+    min-height: 40px !important;
+    margin-top: 20px !important;
+}
+
+.btn-dark {
+    color: #fff !important;
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.b-p-buttons{
+    display:block;
+    width:500px !important;
+    right:10% !important;
+}
+
+.p-2{
+    color:lightgray !important;
+}
+
+.container-fluid{
+    margin-left:0px !important;
+}
+
+.rformssize {
+    width: 1000px !important;
+    max-width: 1000px !important;
+}
+
+#table{
+    width:100%;
+    overflow:auto;
+}
+
+/*MENU DE INICIO*/
+.b-logo {
+    background: #535353 !important;
+}
+
+/*CUADROS DE MENU DE INICIO*/
+.row.card-header.cardheaderrow.btnprincipal.m-0 {
+    height: 300px;
+    padding-left:190px;
+    padding-top:140px;
+
+}
+/*FLIP CARD*/
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.cuadro-seleccion{
+    background-color:
+}
+
+.rowmenuinfo {
+    color: #313131 !important;
+    background-color: #D3D3D3 !important;
+    height: 75px !important;
+    padding-left: 80px;
+    padding-top: 10px;
+    border: 1px ridge;
+}
+
+.rowmenuinfoclients {
+    color: #313131 !important;
+    background-color: #D3D3D3 !important;
+    height: 100px !important;
+    padding-left: 80px;
+    padding-top: 10px;
+    border: 1px ridge;
 }

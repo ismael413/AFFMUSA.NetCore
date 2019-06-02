@@ -8,16 +8,16 @@
 }
 
 @*LISTA DE RESULTADOS DE CUALQUIER ENTIDAD O TABLA EN LA BASE DE DATOS*@
-    <div class="contenido_lista">
-        <div class="contentflex">
+    <div class="contenido_lista pt-2">
+        <div class="contentflex ">
 
             @*MENU DE BUSQUEDA*@
-            <div class="row mb-2">
-                <h4 class="col-2 nopaddingleft">Clients List</h4>
+            <div class="row mb-2 ml-1">
+                <h4 class="col-2 text-light nopaddingleft">Clients List</h4>
                 <select class="custom-select mr-2 w-25" id="findfilter"
                         asp-items="Html.GetEnumSelectList<ClientFindFilters>()"></select>
                 <input type="text" id="txtfind" name="txtfindvalue" class="col-4 form-control-edited" onchange="Find();" />
-                <input type="button" class=" btn-outline-secondary btn-sm ml-2" value="🔎" />
+                <input type="button" class=" btn-dark btn-sm ml-2" value="🔎" />
             </div>
 
             @*MENU DE SELECCION*@
@@ -44,9 +44,9 @@
                         <span class="checkmark"></span>
                     </label>
                 </div>
-                <div class="row">
-                    <input type="button" id="btnselectall" class=" btn-outline-secondary btn ml-2" onclick="selectAll();" value="✔ Select All">
-                    <input type="button" id="unbtnselectall" class=" btn-outline-secondary btn ml-2" onclick="UnselectAll();" value="❌ Unselect All">
+                <div class="row b-p-buttons">
+                    <input type="button" id="btnselectall" class=" btn btn-dark ml-2" onclick="selectAll();" value="✔ Select All">
+                    <input type="button" id="unbtnselectall" class=" btn btn-dark ml-2" onclick="UnselectAll();" value="❌ Unselect All">
                 </div>
             </div>
         </div>
@@ -137,12 +137,12 @@
         </div>
 
         @*--Vista de Lista de Formularios*@
-        <div id="forms" class="card-deck d-none">
+        <div id="forms" class="card d-none rformssize">
 
             @foreach (var client in Model)
             {
-            <div class="bd-callout bd-callout-warning mb-4" style="min-width: 100%;
-                    background-color:#B9D0CE; border-radius:10px;" >
+            <div class="bd-callout bd-callout-warning mb-4 " style="min-width: 100%;
+                    background-color:#313131; color:aliceblue; border-radius:10px;" >
                 <div class="row">
                     @*DIVISION EN 2 COLUMNAS PARA EDICION DE DATOS*@
 
@@ -153,7 +153,7 @@
                             <div class="row m-2">
                                 <div class="col-sm-3"><label class="col-sm-1 col-form-label  ">Company:</label></div>
                                 <div class="col">
-                                    <input asp-for="@client.Company_Name" class="form-control-edited input-group-text mb-0 mt-2" placeholder="Company Name *">
+                                    <input asp-for="@client.Company_Name" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder="Company Name *">
                                     <span asp-validation-for="@client.Company_Name" class="text-danger"></span>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Contact:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Contact_Name" class="form-control-edited input-group-text mb-0 mt-2" placeholder=" Contact Name *">
+                                <input asp-for="@client.Contact_Name" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder=" Contact Name *">
                                 <span asp-validation-for="@client.Contact_Name" class="text-danger"></span>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Photo:</label></div>
                             <div class="col-sm-7">
                                 <div class="custom-file">
-                                    <input asp-for="@client.Photo" class=" w-50 mb-0 mt-2 custom-file-input form-control-edited">
+                                    <input asp-for="@client.Photo" class="custom-file-input ">
                                     <label class="custom-file-label">Choose Photo...</label>
                                 </div>
                             </div>
@@ -179,14 +179,14 @@
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Job:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Job_Title" class="form-control-edited mb-0 mt-2 input-group-text" placeholder="Job Title *">
+                                <input asp-for="@client.Job_Title" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Job Title *">
                                 <span asp-validation-for="@client.Job_Title" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Email:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Email" class="form-control-edited mb-0 mt-2 input-group-text" placeholder="Email *">
+                                <input asp-for="@client.Email" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Email *">
                                 <span asp-validation-for="@client.Email" class="text-danger"></span>
                             </div>
                         </div>
@@ -200,7 +200,7 @@
                             <div class="row m-2">
                                 <div class="col-sm-3"><label class="col-sm-1 col-form-label  ">Phone:</label></div>
                                 <div class="col">
-                                    <input asp-for="@client.Phone" class="form-control-edited mb-0 mt-2 input-group-text" placeholder="Phone *">
+                                    <input asp-for="@client.Phone" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Phone *">
                                     <span asp-validation-for="@client.Phone" class="text-danger"></span>
                                 </div>
                             </div>
@@ -208,28 +208,28 @@
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Fax:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Fax" class="form-control-edited mb-0 mt-2 input-group-text" placeholder="Fax *">
+                                <input asp-for="@client.Fax" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Fax *">
                                 <span asp-validation-for="@client.Fax" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">City:</label></div>
                             <div class="col">
-                                <input asp-for="@client.City" class="form-control-edited mb-0 mt-2 input-group-text" placeholder="City *">
+                                <input asp-for="@client.City" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="City *">
                                 <span asp-validation-for="@client.City" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">ZipCode:</label></div>
                             <div class="col">
-                                <input asp-for="@client.ZipCode" class="form-control-edited input-group-text mb-0 mt-2" placeholder="ZipCode *">
+                                <input asp-for="@client.ZipCode" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder="ZipCode *">
                                 <span asp-validation-for="@client.ZipCode" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Notes:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Notes" class="form-control-edited mb-0 mt-2 input-group-text" placeholder="Notes *">
+                                <input asp-for="@client.Notes" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Notes *">
                                 <span asp-validation-for="@client.Notes" class="text-danger"></span>
                             </div>
                         </div>
@@ -266,9 +266,9 @@
 <div class="footeroptions">
     <div class="bg-light row m-0">
         <a asp-controller="home" asp-action="details"
-           class="btn btn-outline-secondary text-black m-1" id="btnview">View</a>
-        <a href="#" class="btn btn-outline-secondary text-black m-1" id="btnedit">Edit</a>
-        <a href="#" class="btn btn-outline-secondary text-black m-1" id="btndelete">Delete</a>
+           class="btn btn-dark text-black m-1" id="btnview">View</a>
+        <a href="#" class="btn btn-dark text-black m-1" id="btnedit">Edit</a>
+        <a href="#" class="btn btn-dark text-black m-1" id="btndelete">Delete</a>
     </div>
 </div>
 
@@ -326,7 +326,7 @@
         document.getElementById("table").setAttribute("class", "card-deck d-none");
 
         document.getElementById("forms").removeAttribute("class");
-        document.getElementById("forms").setAttribute("class", "card-deck d-flex");
+        document.getElementById("forms").setAttribute("class", "card-deck d-flex rformssize");
 
         document.getElementById("btnselectall").style.visibility = "hidden";
         document.getElementById("unbtnselectall").style.visibility = "hidden";
@@ -517,6 +517,8 @@
                 var captioncontrol = document.getElementById(idcontrolcaption);
                 captioncontrol.innerText += text;
             }
+
+            
 
     </script>
 

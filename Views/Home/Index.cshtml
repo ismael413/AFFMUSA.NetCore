@@ -2,7 +2,137 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@*FONT AWESOME ICONS
+-far fa-sun     --> Tuerca*@
+
+<div class="text-center pt-4">
+    <h1 class=" display-4">Welcome!</h1>
 </div>
+
+
+
+<div class="row">
+    <div class="flip-card col">
+        <div class="flip-card-inner">
+            <div class="card-deck card  border-dark col p-0 mr-4 mb-4 ">
+
+                @*//INFORMACION FRONTAL*@
+                <div class="flip-card-front">
+                    <div class="row card-header cardheaderrow  btnprincipal m-0">
+                        <label class=""><h1 class="fas fa-briefcase">&nbsp;&nbsp;</h1></label>
+                        <label class="display-4 "> <h1>JOBS</h1></label>
+                    </div>
+                </div>
+                @*//INFORMACION DETRAS*@
+                <div class="flip-card-back">
+                    <div class="row m-0 rowmenuinfo">
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>Submitted</h4>
+                            </div>
+                        </div>
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>0</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0 rowmenuinfo">
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>In Progress</h4>
+                            </div>
+                        </div>
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>0</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0 rowmenuinfo">
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>Done</h4>
+                            </div>
+                        </div>
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>0</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0 rowmenuinfo">
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>Canceled</h4>
+                            </div>
+                        </div>
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>0</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card col">
+        <div class="flip-card-inner">
+            <div class="card-deck card  border-dark col p-0 mr-4 mb-4 ">
+                <div class="flip-card-front">
+                    <div class="row card-header cardheaderrow  btnprincipal m-0">
+                     
+                        <label class=""><h1 class="fas fa-users">&nbsp;&nbsp;</h1></label>
+                        <label class="display-4 "> <h1>CLIENTS</h1></label>
+                    </div>
+                </div>
+                @*//INFORMACION DETRAS*@
+                <div class="flip-card-back">
+                    <div class="row m-0 rowmenuinfoclients">
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>Past Due Amount</h4>
+                            </div>
+                        </div>
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>$ 0</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0 rowmenuinfoclients">
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>Past Invoices</h4>
+                            </div>
+                        </div>
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>0</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0 rowmenuinfoclients">
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>Pending charges </h4>
+                            </div>
+                        </div>
+                        <div class="col pl-0">
+                            <div class="cuadro-seleccion">
+                                <h4>0</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://kit.fontawesome.com/b30f3a8456.js"></script>
+}
+

@@ -58,7 +58,16 @@
 
 @*SECCION DE VISTAS DE RESULTADOS*@
 <div class="rightsideoptions margintopformenufixed">
-    <div class="row m-0">
+
+    @*BOTON PARA ACTIVAR VISTA DE INFORMACION GENERAL*@
+    <a href="#" class="btn btn-dark text-black m-1 mt-0 fas 2x fa-eye"
+       id="btnoverview" onclick="showHideInfo()"
+       style="visibility: visible;">&nbsp;&nbsp; Overview</a>
+    @*----------------------------------------------------------*@
+
+
+    <div class="row m-0 d-none" id="clients_overview">
+        @*LOGO DE SECCION INFO CLIENTES*@
         <div class="col p-0">
             <div class="flip-card-inner">
                 <div class="card-deck card  border-dark col p-0 mr-4 mb-4 ">
@@ -73,7 +82,6 @@
                 </div>
             </div>
         </div>
-
         @*//INFORMACION CLIENTES*@
         <div class="col">
             <div class="row m-0 rowmenuinfo">
@@ -127,7 +135,6 @@
 
         </div>
     </div>
-
 
     @*-- Vista de Bloques*@
     <div class="card-deck d-flex mt-2" id="blocks">
@@ -571,7 +578,6 @@
                     }
                 }
             }
-
             }
 
             function highlight(text,idcontrol) {
@@ -591,7 +597,18 @@
                 captioncontrol.innerText += text;
             }
 
+    function showHideInfo() {
+        var controlToShow = document.getElementById("clients_overview");
 
+        if (controlToShow.attributes.getNamedItem('class').value == "row m-0 d-none") {
+            controlToShow.removeAttribute("class");
+            controlToShow.setAttribute("class", "row m-0 d-flex");
+        }
+        else {
+            controlToShow.removeAttribute("class");
+            controlToShow.setAttribute("class", "row m-0 d-none");
+        }
+    }
 
     </script>
 }

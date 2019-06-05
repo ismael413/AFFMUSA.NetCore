@@ -590,8 +590,8 @@ label.display-4, h4, a {
 .sidebar {
     height: 100%;
     position: fixed;
-    z-index: 1000 !important;
     top: 10 !important;
+    z-index:10 !important;
     left: 10 !important;
     background-color: #111;
     overflow-x: hidden;
@@ -694,4 +694,12 @@ a#btnedit, a#btndelete, a#btnview{
 
 .bg-light.row.m-0{
     padding-left:4vw !important;
+}
+
+ul.list-group.flex-column.d-inline-block.first-menu{
+    z-index: 10000 !important;
+}
+
+a.fa.fa-1x.fa-plus{
+    z-index: 10 !important;
 }

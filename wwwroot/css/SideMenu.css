@@ -488,7 +488,6 @@ button:focus, a:focus {
 
 [data-component='sidebar'] .sidebar {
   position: fixed;
-  z-index: 9999;
 }
 [data-component='sidebar'] .first-menu {
   position: fixed;

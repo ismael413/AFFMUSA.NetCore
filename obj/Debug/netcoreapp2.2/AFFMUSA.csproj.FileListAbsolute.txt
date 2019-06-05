@@ -31,3 +31,4 @@ C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\AFFMUSA.pdb
 C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\AFFMUSA.csproj.CopyComplete
 C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Home\ClientList.g.cshtml.cs
 C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutTemplate.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Home\ClientIndex.g.cshtml.cs

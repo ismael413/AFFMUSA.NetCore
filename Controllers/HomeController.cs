@@ -24,6 +24,13 @@ namespace AFFMUSA.Controllers
             return View();
         }
 
+        public IActionResult ClientIndex()
+        {
+            var model = clientMethods.GetClients();
+            return View(model);
+        }
+
+
         public IActionResult Privacy()
         {
             return View();

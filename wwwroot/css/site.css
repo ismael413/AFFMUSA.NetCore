@@ -180,6 +180,7 @@ input:checked + .slider:before {
     height: 25px !important;
     width: 25px !important;
     background-color: #eee !important;
+    border-radius:5px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -189,7 +190,7 @@ input:checked + .slider:before {
 
 /* When the checkbox is checked, add a blue background */
 .container_checkbox input:checked ~ .checkmark {
-    background-color: #088090 !important;
+    background-color: #AA3F20 !important;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -219,18 +220,21 @@ input:checked + .slider:before {
 
 .grid-container {
     display: grid !important;
-    grid-template-columns: 150px 200px 400px ;
+    grid-template-columns: 150px 200px 400px;
     grid-template-rows: 50px !important;
     grid-gap: 10px !important;
-    background-color: #747474 !important;
+    background-color: #422B2B !important;
     display: flex !important;
+    margin-left: 1vw !important;
+    font-size: 5vw !important;
+    max-height: 69.33px !important;
 }
 
     .grid-container > div {
-        background-color: #747474 !important;
+        background-color: #422B2B !important;
         text-align: center !important;
         padding: 8px 0 !important;
-        font-size: 14px !important;
+        font-size: 5vw !important;
     }
 
 .nopaddingleft{
@@ -259,6 +263,15 @@ input:checked + .slider:before {
     top: 92% !important;
     left: 0% !important;
     width: 100% !important;
+}
+
+.footeroptions3 {
+    position: fixed !important;
+    top: 92% !important;
+    left: 0% !important;
+    width: 100% !important;
+    background-color: #4e03036b !important;
+    margin-left: 250px !important;
 }
 .contenido_lista {
     margin-bottom: 100px !important;
@@ -351,14 +364,18 @@ input:checked + .slider:before {
         text-align: left !important;
         background-color: #313131 !important;
         color: white !important;
-    }   
+    }
 
     #customers tr:nth-child(odd) {
         background: #C8C8C8;
     }
 
-    #customers tr:nth-child(odd):hover {
-    background: #F0F0F0;
+        #customers tr:nth-child(odd):hover{
+            background: #F0F0F0;
+        }
+
+    #customers td {
+        color: darkslategray !important;
     }
 
 .card-header {
@@ -441,12 +458,17 @@ input:checked + .slider:before {
     background: #535353 !important;
 }
 
-/*CUADROS DE MENU DE INICIO*/
-.row.card-header.cardheaderrow.btnprincipal.m-0 {
-    height: 300px;
-    padding-left:190px;
-    padding-top:140px;
+label.display-4, h4, a {
+    font-size: 1.8vw !important;
+}
 
+
+
+/*CUADROS DE MENU DE INICIO*/
+.row.card-header.cardheaderrow.btnprincipal.m-0{
+    height: 300px;
+    padding-left: 190px;
+    padding-top: 140px;
 }
 /*FLIP CARD*/
 .flip-card {
@@ -507,4 +529,169 @@ input:checked + .slider:before {
     padding-left: 80px;
     padding-top: 10px;
     border: 1px ridge;
+}
+
+.td-from-homepage{
+    color:darkslategray !important;
+}
+
+/*BLOQUE DE OPCIONE MENU SOBRE PANTALLA*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin-left: 150px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    background: #865957 !important;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /*Botones de bloques modales*/
+.btnfullwidth {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    box-shadow: #4A4A4A 5px 5px;
+    font-size:28px !important;
+    padding-top:15px !important;
+}
+
+/*SIDE BAR CLIENTS*/
+.sidebar {
+    height: 100%;
+    position: fixed;
+    z-index: 1000 !important;
+    top: 10 !important;
+    left: 10 !important;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+    margin-top: -14px !important;
+    width: 15vw !important;
+}
+
+    .sidebar a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+    }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+        .sidebar a {
+            font-size: 18px;
+        }
+}
+
+.rightsideoptions{
+    margin-left:  16vw  !important;
+}
+
+.buttonlightred {
+    background-color: #9c5d5ddb !important;
+}
+
+input#unbtnselectall, input#btnselectall {
+    width: 12vw !important;
+}
+
+.fixedtopmenu {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000 !important;
+    margin-top: 60px !important;
+    margin-left: -16px !important;
+}
+
+.margintopformenufixed
+{
+    margin-top: 200px !important;
+}
+
+ label.container_checkbox {
+    font-size: 1.2vw !important;
+}
+
+.row.m-0{
+    max-height:250px !important;
+    height:250px !important;
+    margin-right:0px !important;
+}
+
+    .row.m-0.rowmenuinfo {
+        height: 62.5px !important;
+        max-height: 62.5px !important;
+    }
+
+.row.card-header.cardheaderrow.btnprincipal.m-0.clientindex {
+    padding-left: 105px !important;
+    padding-top: 115px !important;
+}
+
+div#cardblock_0{
+    margin-right: 0px !important;
+}
+
+div#cardblock_2{
+    margin-left:0px !important;
+}
+
+.card.text-left.row.m-0 {
+    height: 75px !important;
+    background-color: #463434 !important;
+}
+
+a#btnedit, a#btndelete, a#btnview{
+    font-size: 1.5vw !important;
+}
+
+.bg-light.row.m-0{
+    padding-left:4vw !important;
 }

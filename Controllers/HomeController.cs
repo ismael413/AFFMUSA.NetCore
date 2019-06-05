@@ -24,6 +24,21 @@ namespace AFFMUSA.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult ClientIndex(Client cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                //Llama al metodo agregar para agregar el cliente especificado.
+                Client client = clientMethods.Add(cliente);
+                //devolver cliente agregado a la pagina especificada.
+                return RedirectToAction("index", new { id = client.Id });
+            }
+            var model = clientMethods.GetClients();
+            return View(model);
+        }
+
+        [HttpGet]
         public IActionResult ClientIndex()
         {
             var model = clientMethods.GetClients();

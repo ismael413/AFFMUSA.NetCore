@@ -612,6 +612,10 @@ label.display-4, h4, a {
             color: #f1f1f1;
         }
 
+    .sidebar:hover {
+        z-index: 20 !important;
+    }
+
 .main {
     margin-left: 160px; /* Same as the width of the sidenav */
     padding: 0px 10px;
@@ -645,7 +649,7 @@ input#unbtnselectall, input#btnselectall {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000 !important;
+    z-index: 10 !important;
     margin-top: 60px !important;
     margin-left: -16px !important;
 }
@@ -693,7 +697,7 @@ a#btnedit, a#btndelete, a#btnview{
 }
 
 .bg-light.row.m-0{
-    padding-left:4vw !important;
+    padding-left:60% !important;
 }
 
 ul.list-group.flex-column.d-inline-block.first-menu{

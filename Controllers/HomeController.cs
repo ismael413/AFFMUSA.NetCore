@@ -12,13 +12,16 @@ namespace AFFMUSA.Controllers
 {
     public class HomeController : Controller
     {
-        ClientMethodsImplementation clientMethods = new ClientMethodsImplementation();
+        private readonly ClientMethods clientMethods;
         private readonly IHostingEnvironment hostingEnviroment;
 
-        public HomeController(IHostingEnvironment hostingEnviroment)
+        public HomeController(IHostingEnvironment hostingEnviroment,
+            ClientMethods clientMethods)
         {
             this.hostingEnviroment = hostingEnviroment;
+            this.clientMethods = clientMethods;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -32,17 +35,20 @@ namespace AFFMUSA.Controllers
                 //Llama al metodo agregar para agregar el cliente especificado.
                 Client client = clientMethods.Add(cliente);
                 //devolver cliente agregado a la pagina especificada.
-                return RedirectToAction("index", new { id = client.Id });
+                return RedirectToAction("clientdetails", new { id = client.Id });
             }
-            var model = clientMethods.GetClients();
-            return View(model);
+            else
+            {
+                var model = clientMethods.GetClients();
+                return View(model);
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            }
         }
 
         [HttpGet]
         public IActionResult ClientIndex()
         {
-            var model = clientMethods.GetClients();
-            return View(model);
+            return View();
         }
 
 
@@ -68,6 +74,13 @@ namespace AFFMUSA.Controllers
         public ViewResult Create()
         {
             return View();
+        }
+
+        [Route("Home/ClientDetails", Name= "clientselecteddetails")]
+        public ViewResult ClientDetails(int Id)
+        {
+            var model = clientMethods.GetClient(Id);
+            return View(model);
         }
     }
 }

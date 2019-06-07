@@ -22,7 +22,7 @@ namespace AFFMUSA.Models
         [Required]
         public string Email { get; set; }
         public string Phone { get; set; }
-        [MinLength(5, ErrorMessage = "Extension of Phone Number can not contain more than 5 digits.")]
+        [MaxLength(5, ErrorMessage = "Extension of Phone Number can not contain more than 5 digits.")]
         public string Ext { get; set; }
         public string Fax { get; set; }
         [Required, MaxLength(30, ErrorMessage = "Name cannot exceed 30 characters")]

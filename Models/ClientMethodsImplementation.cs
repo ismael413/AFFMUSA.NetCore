@@ -7,13 +7,17 @@ namespace AFFMUSA.Models
 {
     public class ClientMethodsImplementation : ClientMethods
     {
-        private List<Client> clients;
+        public List<Client> clients;
+        public int IdClientSelected { get; set; }
 
         public ClientMethodsImplementation()
         {
-            clients = new List<Client>()
+            if (clients == null)
+            {
+                clients = new List<Client>()
             {
                  new Client() {
+                    Id = 1,
                     Company_Name = "HR Company",
                     Contact_Name = "Gregorio Hernandez",
                     Job_Title = "Administrador",
@@ -26,6 +30,7 @@ namespace AFFMUSA.Models
                 },
             new Client()
             {
+                Id = 2,
                 Company_Name = "HR Company",
                 Contact_Name = "Gregorio Hernandez",
                 Job_Title = "Administrador",
@@ -39,6 +44,7 @@ namespace AFFMUSA.Models
 
             new Client()
             {
+                Id = 3,
                 Company_Name = "HR Company",
                 Contact_Name = "Gregorio Hernandez",
                 Job_Title = "Administrador",
@@ -51,14 +57,15 @@ namespace AFFMUSA.Models
             }
 
             };
-
+            }
         }
+
 
         public Client Add(Client client)
         {
             //ESPECIFICAR INDICE DE CLIENTE A AGREGAR EN LA 
             //LISTA DE CLIENTES
-            clients.Max(c => c.Id + 1);
+            client.Id = clients.Max(c => c.Id + 1);
             //AGREAGAR CLIENTE A LA LISTA
             clients.Add(client);
             return client;

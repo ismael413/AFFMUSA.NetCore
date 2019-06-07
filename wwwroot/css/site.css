@@ -124,11 +124,11 @@ body {
     }
 
 input:checked + .slider {
-    background-color: #96BAB7 !important;
+    background-color: #941e1ec9 !important;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3 !important;
+    box-shadow: 0 0 1px #941e1ec9 !important;
 }
 
 input:checked + .slider:before {
@@ -736,4 +736,24 @@ div#myModal2{
     font-size:50px !important;
     color: whitesmoke !important;
     padding-left:90%;
+}
+
+/*CLIENT DETAILS*/
+.card-body.text-center {
+    background-color: #534040 !important;
+}
+h4.text-black-50 {
+    color: whitesmoke !important;
+    margin-bottom: 5px !important;
+}
+
+.card-header {
+    height: 120px !important;
+    width: 100% !important;
+}
+
+input#btnviewtop{
+    position:absolute;
+    top:10px !important;
+    left:70% !important;
 }

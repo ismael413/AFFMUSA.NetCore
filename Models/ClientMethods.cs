@@ -7,6 +7,7 @@ namespace AFFMUSA.Models
 {
     public interface ClientMethods
     {
+        int IdClientSelected { get; set; }
         Client GetClient(int Id);
         IEnumerable<Client> GetClients();
         Client Add(Client client);

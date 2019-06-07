@@ -4,157 +4,161 @@
     int i = 0;
     int j = 0;
     int k = 0;
-
 }
 
+@*MENU PRINCIPAL LATERAL*@
+<div class="sidebar">
+    <a asp-controller="home" asp-action="clientindex" id="btnAddNewClient"><i class="fa fa-1x fa-arrow-left"></i> Go Back</a>
+    <a href="#clients"><i class="fa fa-1x  fa-print"></i>   Export List</a>
+</div>
+
 @*LISTA DE RESULTADOS DE CUALQUIER ENTIDAD O TABLA EN LA BASE DE DATOS*@
-    <div class="contenido_lista pt-2">
-        <div class="contentflex ">
-
-            @*MENU DE BUSQUEDA*@
-            <div class="row mb-2 ml-1">
-                <h4 class="col-2 text-light nopaddingleft">Clients List</h4>
-                <select class="custom-select mr-2 w-25" id="findfilter"
-                        asp-items="Html.GetEnumSelectList<ClientFindFilters>()"></select>
-                <input type="text" id="txtfind" name="txtfindvalue" class="col-4 form-control-edited" onchange="Find();" />
-                <input type="button" class=" btn-dark btn-sm ml-2" value="🔎" />
-            </div>
-
-            @*MENU DE SELECCION*@
-            <div class="grid-container">
-                <h6 class="p-2">View-Results-Style</h6>
-                <div class="item1 pl-2">
-                    <label class="container_checkbox">
-                        Blocks-View
-                        <input id="chkblocks" onchange="chkblocks();" type="checkbox" checked="checked">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="item2">
-                    <label class="container_checkbox">
-                        Table
-                        <input id="chktable" onchange="chktable();" type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="item3">
-                    <label class="container_checkbox">
-                        Forms-List-View
-                        <input id="chkforms" onchange="chkforms();" type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="row b-p-buttons">
-                    <input type="button" id="btnselectall" class=" btn btn-dark ml-2" onclick="selectAll();" value="✔ Select All">
-                    <input type="button" id="unbtnselectall" class=" btn btn-dark ml-2" onclick="UnselectAll();" value="❌ Unselect All">
-                </div>
-            </div>
+@*ENCABEZADO DE OPCIONES*@
+<div class="rightsideoptions pt-4  fixedtopmenu" style="background:#422b2b;">
+    <div>
+        @*MENU DE BUSQUEDA*@
+        <div class="row mb-2 ml-1 ">
+            <h4 class="col-2 text-light nopaddingleft">Clients List</h4>
+            <select class="custom-select mr-2 w-25" id="findfilter"
+                    asp-items="Html.GetEnumSelectList<ClientFindFilters>()"></select>
+            <input type="text" id="txtfind" name="txtfindvalue" class="col-4 form-control-edited" onchange="Find();" />
+            <input type="button" class=" btn-dark btn-sm ml-2 buttonlightred" value="🔎" />
         </div>
 
-        @*VISTAS DE RESULTADOS*@
+        @*MENU DE SELECCION*@
+        <div class="grid-container">
+            <h6 class="p-2">View-Results-Style</h6>
+            <div class="item1 pl-2">
+                <label class="container_checkbox">
+                    Blocks-View
+                    <input id="chkblocks" onchange="chkblocks();" type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="item2">
+                <label class="container_checkbox">
+                    Table
+                    <input id="chktable" onchange="chktable();" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="item3">
+                <label class="container_checkbox">
+                    Forms-List-View
+                    <input id="chkforms" onchange="chkforms();" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="row b-p-buttons">
+                <input type="button" id="btnselectall" class=" btn btn-dark ml-2 buttonlightred" onclick="selectAll();" value="✔ Select All">
+                <input type="button" id="unbtnselectall" class=" btn btn-dark ml-2 buttonlightred" onclick="UnselectAll();" value="❌ Unselect All">
+            </div>
+        </div>
+    </div>
+</div>
 
-        @*-- Vista de Bloques*@
-        <div class="card-deck" id="blocks">
-            @foreach (var client in Model)
+<div class="rightsideoptions margintopformenufixed">
+    @*VISTAS DE RESULTADOS*@
+    @*-- Vista de Bloques*@
+    <div class="card-deck d-flex mt-2" id="blocks">
+        @foreach (var cliente in Model)
+        {
+            <div class="card border-dark mb-3" id="cardblock_@i.ToString()" style="min-width: 18rem;
+                     display:block; flex-wrap:wrap;">
+                <div class="card-header">
+                    <label class="container_checkbox">
+                        Select
+                        <input id="chkgenerate_@i.ToString()" value="check" onchange="chkgenerate();" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <h3 id="blcokHcompany_@i.ToString()">@cliente.Company_Name</h3>
+                </div>
+
+                <div class="card text-left row m-0">
+                    <label class="text-md-left font-weight-bold col-sm">Contact:</label>
+                    <h7 class="col-md">@cliente.Contact_Name</h7>
+                </div>
+
+                <div class="card text-left row m-0">
+                    <label class="text-md-left font-weight-bold col-sm">Job Title:</label>
+                    <h7 class="col-md">@cliente.Job_Title</h7>
+                </div>
+
+                <div class="card text-left row m-0">
+                    <label class="text-md-left font-weight-bold col-sm">Email:</label>
+                    <h7 class="col-md">@cliente.Email</h7>
+                </div>
+
+                <div class="card text-left row m-0">
+                    <label class="text-md-left font-weight-bold col-sm">Phone:</label>
+                    <h7 class="col-md">@cliente.Phone</h7>
+                </div>
+
+                <div class="card text-left row m-0">
+                    <label class="text-md-left font-weight-bold col-sm">Ext.:</label>
+                    <h7 class="col-md">@cliente.Ext</h7>
+                </div>
+                @{
+                    i++;
+                }
+            </div>
+        }
+    </div>
+    @*-- Vista de Tabla*@
+    <div id="table" class="card-deck d-none mt-2">
+
+        <table id="customers">
+            <tr>
+                <th>✔</th>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Job_Title</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Ext</th>
+                <th>Country</th>
+            </tr>
+            @foreach (var cliente in Model)
             {
-                <div class="card border-dark mb-3" id="cardblock_@i.ToString()" style="min-width: 18rem;
-                    max-width:380px;  display:block; flex-wrap:wrap;">
-                    <div class="card-header">
+                <tr>
+                    <td>
                         <label class="container_checkbox">
-                            Select
-                            <input id="chkgenerate_@i.ToString()" value="check" onchange="chkgenerate();" type="checkbox">
+                            <input id="chktable_@j.ToString()" onchange="chktable_changed();" type="checkbox">
                             <span class="checkmark"></span>
                         </label>
-                        <h3 id="blcokHcompany_@i.ToString()">@client.Company_Name</h3>
-                    </div>
-
-                    <div class="card text-left row m-0">
-                        <label class="text-md-left font-weight-bold col-sm">Contact:</label>
-                        <h7 class="col-md">@client.Contact_Name</h7>
-                    </div>
-
-                    <div class="card text-left row m-0">
-                        <label class="text-md-left font-weight-bold col-sm">Job Title:</label>
-                        <h7 class="col-md">@client.Job_Title</h7>
-                    </div>
-
-                    <div class="card text-left row m-0">
-                        <label class="text-md-left font-weight-bold col-sm">Email:</label>
-                        <h7 class="col-md">@client.Email</h7>
-                    </div>
-
-                    <div class="card text-left row m-0">
-                        <label class="text-md-left font-weight-bold col-sm">Phone:</label>
-                        <h7 class="col-md">@client.Phone</h7>
-                    </div>
-
-                    <div class="card text-left row m-0">
-                        <label class="text-md-left font-weight-bold col-sm">Ext.:</label>
-                        <h7 class="col-md">@client.Ext</h7>
-                    </div>
-                    @{
-                        i++;
-                    }
-                </div>
-            }
-        </div>
-
-        @*-- Vista de Tabla*@
-        <div id="table" class="card-deck d-none">
-
-            <table id="customers">
-                <tr>
-                    <th>✔</th>
-                    <th>Company</th>
-                    <th>Contact</th>
-                    <th>Job_Title</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Ext</th>
-                    <th>Country</th>
+                    </td>
+                    <td>@cliente.Company_Name</td>
+                    <td>@cliente.Contact_Name</td>
+                    <td>@cliente.Job_Title</td>
+                    <td>@cliente.Email</td>
+                    <td>@cliente.Phone</td>
+                    <td>@cliente.Ext</td>
+                    <td>@cliente.Country</td>
                 </tr>
-                @foreach (var client in Model)
-                {
-                    <tr>
-                        <td>
-                            <label class="container_checkbox">
-                                <input id="chktable_@j.ToString()" onchange="chktable_changed();" type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </td>
-                        <td>@client.Company_Name</td>
-                        <td>@client.Contact_Name</td>
-                        <td>@client.Job_Title</td>
-                        <td>@client.Email</td>
-                        <td>@client.Phone</td>
-                        <td>@client.Ext</td>
-                        <td>@client.Country</td>
-                    </tr>
 
-                    j++;
-                }
-            </table>
-        </div>
+                j++;
+            }
+        </table>
+    </div>
+    @*--Vista de Lista de Formularios*@
+    <div id="forms" class="card d-none rformssize">
 
-        @*--Vista de Lista de Formularios*@
-        <div id="forms" class="card d-none rformssize">
-
-            @foreach (var client in Model)
-            {
+        @foreach (var cliente in Model)
+        {
             <div class="bd-callout bd-callout-warning mb-4 " style="min-width: 100%;
-                    background-color:#313131; color:aliceblue; border-radius:10px;" >
+                    background-color:#313131; color:aliceblue; border-radius:10px;">
                 <div class="row">
                     @*DIVISION EN 2 COLUMNAS PARA EDICION DE DATOS*@
 
                     @*PRIMERA COLUMNA*@
                     <div class="col">
-                        @*DATOS DE LA COMPANIA mb-0 mt-2*@
+                        @*DATOS DE LA COMPANIA *@
                         <div>
                             <div class="row m-2">
                                 <div class="col-sm-3"><label class="col-sm-1 col-form-label  ">Company:</label></div>
                                 <div class="col">
-                                    <input asp-for="@client.Company_Name" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder="Company Name *">
-                                    <span asp-validation-for="@client.Company_Name" class="text-danger"></span>
+                                    <input asp-for="@cliente.Company_Name" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder="Company Name *">
+                                    <span asp-validation-for="@cliente.Company_Name" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -162,8 +166,8 @@
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Contact:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Contact_Name" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder=" Contact Name *">
-                                <span asp-validation-for="@client.Contact_Name" class="text-danger"></span>
+                                <input asp-for="@cliente.Contact_Name" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder=" Contact Name *">
+                                <span asp-validation-for="@cliente.Contact_Name" class="text-danger"></span>
                             </div>
                         </div>
                         @*FOTO *@
@@ -171,7 +175,7 @@
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Photo:</label></div>
                             <div class="col-sm-7">
                                 <div class="custom-file">
-                                    <input asp-for="@client.Photo" class="custom-file-input ">
+                                    <input asp-for="@cliente.Photo" class="custom-file-input ">
                                     <label class="custom-file-label">Choose Photo...</label>
                                 </div>
                             </div>
@@ -179,15 +183,15 @@
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Job:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Job_Title" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Job Title *">
-                                <span asp-validation-for="@client.Job_Title" class="text-danger"></span>
+                                <input asp-for="@cliente.Job_Title" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Job Title *">
+                                <span asp-validation-for="@cliente.Job_Title" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Email:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Email" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Email *">
-                                <span asp-validation-for="@client.Email" class="text-danger"></span>
+                                <input asp-for="@cliente.Email" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Email *">
+                                <span asp-validation-for="@cliente.Email" class="text-danger"></span>
                             </div>
                         </div>
                         @*-------------------------------------------------------------------*@
@@ -200,37 +204,37 @@
                             <div class="row m-2">
                                 <div class="col-sm-3"><label class="col-sm-1 col-form-label  ">Phone:</label></div>
                                 <div class="col">
-                                    <input asp-for="@client.Phone" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Phone *">
-                                    <span asp-validation-for="@client.Phone" class="text-danger"></span>
+                                    <input asp-for="@cliente.Phone" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Phone *">
+                                    <span asp-validation-for="@cliente.Phone" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Fax:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Fax" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Fax *">
-                                <span asp-validation-for="@client.Fax" class="text-danger"></span>
+                                <input asp-for="@cliente.Fax" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Fax *">
+                                <span asp-validation-for="@cliente.Fax" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">City:</label></div>
                             <div class="col">
-                                <input asp-for="@client.City" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="City *">
-                                <span asp-validation-for="@client.City" class="text-danger"></span>
+                                <input asp-for="@cliente.City" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="City *">
+                                <span asp-validation-for="@cliente.City" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">ZipCode:</label></div>
                             <div class="col">
-                                <input asp-for="@client.ZipCode" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder="ZipCode *">
-                                <span asp-validation-for="@client.ZipCode" class="text-danger"></span>
+                                <input asp-for="@cliente.ZipCode" class="form-control-edited rounded-pill input-group-text mb-0 mt-2" placeholder="ZipCode *">
+                                <span asp-validation-for="@cliente.ZipCode" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Notes:</label></div>
                             <div class="col">
-                                <input asp-for="@client.Notes" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Notes *">
-                                <span asp-validation-for="@client.Notes" class="text-danger"></span>
+                                <input asp-for="@cliente.Notes" class="form-control-edited rounded-pill mb-0 mt-2 input-group-text" placeholder="Notes *">
+                                <span asp-validation-for="@cliente.Notes" class="text-danger"></span>
                             </div>
                         </div>
                         @*-------------------------------------------------------------------*@
@@ -248,39 +252,41 @@
                     </p>
                     @*-------------------------------------------------------------------*@
                 </div>
-            
+
 
             </div>
-                k++;
-            }
+            k++;
+        }
 
-        </div>
+    </div>
+
+    @*DIV SEPARADOR DE PIE DE PAGINA DEL CONTENIDO DE LA MISMA*@
 </div>
 
-@*DIV SEPARADOR DE PIE DE PAGINA DEL CONTENIDO DE LA MISMA*@
 <div>
 
 </div>
 
 @*PIE DE PAGINA*@
-<div class="footeroptions">
+@*PIE DE PAGINA*@
+<div class="footeroptions3">
     <div class="bg-light row m-0">
         <a asp-controller="home" asp-action="details"
-           class="btn btn-dark text-black m-1" id="btnview">View</a>
-        <a href="#" class="btn btn-dark text-black m-1" id="btnedit">Edit</a>
-        <a href="#" class="btn btn-dark text-black m-1" id="btndelete">Delete</a>
+           class="btn btn-dark text-black m-1 buttonlightred" id="btnview">View</a>
+        <a href="#" class="btn btn-dark text-black m-1 buttonlightred" id="btnedit">Edit</a>
+        <a href="#" class="btn btn-dark text-black m-1 buttonlightred" id="btndelete">Delete</a>
     </div>
 </div>
 
 @*SCRIPTS O CODIGOS JAVACRIPT DE LA PAGINA*@
 @section Scripts{
-
     <script type="text/javascript">
-        function chkblocks() {
+       function chkblocks() {
             document.getElementById("chktable").checked = false;
             document.getElementById("chkforms").checked = false;
 
-            document.getElementById("blocks").style.display = "flex";
+            document.getElementById("blocks").removeAttribute("class");
+            document.getElementById("blocks").setAttribute( "class", "card-deck d-flex mt-2");
 
             document.getElementById("table").removeAttribute("class");
             document.getElementById("table").setAttribute("class", "card-deck d-none");
@@ -297,10 +303,11 @@
             document.getElementById("chkblocks").checked = false;
             document.getElementById("chkforms").checked = false;
             //view
-            document.getElementById("blocks").style.display = "none";
+            document.getElementById("blocks").removeAttribute("class");
+            document.getElementById("blocks").setAttribute( "class", "card-deck d-none");
 
             document.getElementById("table").removeAttribute("class");
-            document.getElementById("table").setAttribute("class", "card-deck d-flex");
+            document.getElementById("table").setAttribute("class", "card-deck d-flex mt-2");
 
             document.getElementById("forms").removeAttribute("class");
             document.getElementById("forms").setAttribute("class","card-deck d-none");
@@ -320,13 +327,14 @@
         document.getElementById("chkblocks").checked = false;
         document.getElementById("chktable").checked = false;
         //view
-        document.getElementById("blocks").style.display = "none";
+        document.getElementById("blocks").removeAttribute("class");
+        document.getElementById("blocks").setAttribute( "class", "card-deck d-none");
 
         document.getElementById("table").removeAttribute("class");
         document.getElementById("table").setAttribute("class", "card-deck d-none");
 
         document.getElementById("forms").removeAttribute("class");
-        document.getElementById("forms").setAttribute("class", "card-deck d-flex rformssize");
+        document.getElementById("forms").setAttribute("class", "card-deck d-flex mt-2 rformssize");
 
         document.getElementById("btnselectall").style.visibility = "hidden";
         document.getElementById("unbtnselectall").style.visibility = "hidden";
@@ -464,7 +472,7 @@
                                 var idcontrolcoincidente=null;
                                 //obtener posible coincidencia del bloque actual
                                 idcontrolactual = document.getElementById('cardblock_' + i.toString()).id;
-                                var possible_result = document.getElementById('blcokHcompany_' + i.toString()).innerText; 
+                                var possible_result = document.getElementById('blcokHcompany_' + i.toString()).innerText;
                                 var idcontrol = document.getElementById('blcokHcompany_' + i.toString()).id;
                                 var YesOrNo = possible_result.includes(text);
                                 //si encuentras coincidencias
@@ -505,7 +513,7 @@
                 var control = document.getElementById(idcontrol);
                 var innerHTML = control.innerHTML;
                 var index = innerHTML.indexOf(text);
-                if (index >= 0) { 
+                if (index >= 0) {
                     innerHTML = innerHTML.substring(0,index) + "<span id='spanhighlight_"+idcontrol+"' class='highlight'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
                     control.innerHTML = innerHTML;
                 }
@@ -518,7 +526,7 @@
                 captioncontrol.innerText += text;
             }
 
-            
+
 
     </script>
 

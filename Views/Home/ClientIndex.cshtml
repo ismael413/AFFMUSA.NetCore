@@ -1,13 +1,10 @@
 ﻿@model Client
 
     @{
-        
         int i = 0;
         int j = 0;
         int k = 0;
         ClientMethodsImplementation list = new ClientMethodsImplementation();
-
-      
     }
 
     @*MENU PRINCIPAL LATERAL*@
@@ -25,7 +22,7 @@
             <div class="row mb-2 ml-1 ">
                 <h5 class="col-2 text-light nopaddingleft">Clients Management</h5>
                 <select class="custom-select mr-2 w-25" id="findfilter"
-                        asp-items="Html.GetEnumSelectList<ClientFindFilters>()"></select>
+                        lientFindFilters>()"></select>
                 <input type="text" id="txtfind" name="txtfindvalue" class="col-4 form-control-edited" onchange="Find();" />
                 <input type="button" class=" btn-dark btn-sm ml-2 buttonlightred" value="🔎" />
             </div>
@@ -159,11 +156,11 @@
                             @{
                                 var parms = new Dictionary<string, string>
                                             {
-                                    { "Id", cliente.Id.ToString() }
+                                    { "Id", cliente.ClientID.ToString() }
                                 };
                             }
                             <form asp-route="clientselecteddetails" asp-all-route-data="parms" method="post">
-                                <input type="submit" class="btn btn-dark text-black m-1 buttonlightred" id="btnviewtop" value="View" id="btnview" />
+                                <input type="submit" class="btn btn-dark text-black m-1 buttonlightred" id="btnviewtop" value="View" />
                             </form>
                    
                     <h3 id="blcokHcompany_@i.ToString()">@cliente.Company_Name</h3>
@@ -229,7 +226,7 @@
                     <td>@cliente.Email</td>
                     <td>@cliente.Phone</td>
                     <td>@cliente.Ext</td>
-                    <td>@cliente.Country</td>
+                    @*<td>@cliente.Country</td>*@
                 </tr>
 
                 j++;
@@ -459,16 +456,16 @@
                                     <input asp-for="City" class="form-control" id="itcity" placeholder="City *">
                                     <span asp-validation-for="City" id="city_field" class="text-danger d-none">The City field is required **</span>
                                 </div>
-                                <div class="btn-group dropup">
+                                @*<div class="btn-group dropup">
                                     <label asp-for="State" class="col-sm-1 col-form-label  mr-3"></label>
                                     <div class="col-sm-5">
                                         <select asp-for="State"  id="selstate" class="custom-select ml-4 w-100"
-                                                asp-items="Html.GetEnumSelectList<States>()">
+                                                >
                                             <option value="">State </option>
                                         </select>
                                         <span asp-validation-for="State" id="state_field" class="text-danger d-none">The State field is required **</span>
                                     </div>
-                                </div>
+                                </div>*@
                             </div>
 
                             <div class="row m-1">
@@ -477,16 +474,16 @@
                                     <input asp-for="ZipCode" class="form-control" id="itzipcode" placeholder="ZipCode *">
                                     <span asp-validation-for="ZipCode" class="text-danger"></span>
                                 </div>
-                                <div class="btn-group dropup">
+                                @*<div class="btn-group dropup">
                                     <label asp-for="Country" class="col-sm-1 col-form-label  mr-3"></label>
                                     <div class="col-sm-5">
                                         <select asp-for="Country" id="selcountry" class="custom-select ml-4 w-100"
-                                                asp-items="Html.GetEnumSelectList<Country>()">
+                                                >
                                             <option value="">Country </option>
                                         </select>
                                         <span asp-validation-for="Country" id="country_field" class="text-danger d-none">The Country field is required **</span>
                                     </div>
-                                </div>
+                                </div>*@
                             </div>
                             <hr>
                             <div class="row m-1">

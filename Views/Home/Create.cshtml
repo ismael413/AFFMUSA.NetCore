@@ -115,16 +115,16 @@
                 <input asp-for="City" class="form-control" placeholder="City *">
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
-            <div class="btn-group dropup">
+            @*<div class="btn-group dropup">
                 <label asp-for="State" class="col-sm-1 col-form-label  mr-3"></label>
                 <div class="col-sm-5">
                     <select asp-for="State" class="custom-select ml-4 w-100"
-                            asp-items="Html.GetEnumSelectList<States>()">
+                           >
                         <option value="">State </option>
                     </select>
                     <span asp-validation-for="State" class="text-black-50 small"></span>
                 </div>
-            </div>
+            </div>*@
         </div>
 
         <div class="row m-1">
@@ -133,16 +133,16 @@
                 <input asp-for="ZipCode" class="form-control" placeholder="ZipCode *">
                 <span asp-validation-for="ZipCode" class="text-danger"></span>
             </div>
-            <div class="btn-group dropup">
+            @*<div class="btn-group dropup">
                 <label asp-for="Country" class="col-sm-1 col-form-label  mr-3"></label>
                 <div class="col-sm-5">
                     <select asp-for="Country" class="custom-select ml-4 w-100"
-                            asp-items="Html.GetEnumSelectList<Country>()">
+                            >
                         <option value="">Country </option>
                     </select>
                     <span asp-validation-for="Country" class="text-black-50 small"></span>
                 </div>
-            </div>
+            </div>*@
         </div>
         <hr>
         <div class="row m-1">

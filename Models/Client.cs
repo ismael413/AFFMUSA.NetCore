@@ -10,9 +10,11 @@ namespace AFFMUSA.Models
 {
     public class Client
     {
-        public int Id { get; set; }
+        public int ClientID { get; set; }
+
         [Required, MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
         public string Company_Name { get; set; }
+
         [Required, MaxLength(30, ErrorMessage = "Name cannot exceed 30 characters")]
         public string Contact_Name { get; set; }
         [Required, MaxLength(20, ErrorMessage = "Name cannot exceed 20 characters")]
@@ -23,20 +25,19 @@ namespace AFFMUSA.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         [MaxLength(5, ErrorMessage = "Extension of Phone Number can not contain more than 5 digits.")]
-        public string Ext { get; set; }
+        public int Ext { get; set; }
         public string Fax { get; set; }
         [Required, MaxLength(30, ErrorMessage = "Name cannot exceed 30 characters")]
         public string City { get; set; }
         [Required]
-        public States State { get; set; }
+        public List<States> States { get; set; }
         [Range(0, 100000, ErrorMessage = "ZipCode should not contain characters")]
-        public string ZipCode { get; set; }
+        public int ZipCode { get; set; }
         [Required]
-        public Country Country { get; set; }
+        public List<Country> Countries { get; set; }
         public string Notes { get; set; }
-        public IFormFile Photo { get; set; }
+        public string Photo { get; set; }
         [Required]
         public bool AllowBilling { get; set; }
-
     }
 }

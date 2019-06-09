@@ -8,16 +8,20 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MultiAplicacion.Models;
 
 namespace AFFMUSA
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private IConfiguration _config;
+
+        public Startup(IConfiguration config)
         {
-            Configuration = configuration;
+            _config = config;
         }
 
         public IConfiguration Configuration { get; }
@@ -34,6 +38,9 @@ namespace AFFMUSA
             services.AddSingleton<ClientMethods, ClientMethodsImplementation>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContextPool<AppDbContext>(
+                options => options.UseSqlServer(_config.GetConnectionString("AFFMUSADbConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +67,7 @@ namespace AFFMUSA
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Clients}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace AFFMUSA.Models.Lists
+namespace AFFMUSA.Models
 {
-    public class States
+    public class Country
     {
-        public int StatesID { get; set; }
+        public int CountryID { get; set; }
 
         [Required, MaxLength(30, ErrorMessage = "The Country Name can just contain 30 characters.")]
-        public string StateName { get; set; }
+        public string CountryName { get; set; }
+
     }
 }

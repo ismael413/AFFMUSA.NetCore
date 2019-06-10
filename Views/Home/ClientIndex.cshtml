@@ -22,7 +22,7 @@
             <div class="row mb-2 ml-1 ">
                 <h5 class="col-2 text-light nopaddingleft">Clients Management</h5>
                 <select class="custom-select mr-2 w-25" id="findfilter"
-                        lientFindFilters>()"></select>
+                      asp-items="Html.GetEnumSelectList<ClientFindFilters>()"></select>
                 <input type="text" id="txtfind" name="txtfindvalue" class="col-4 form-control-edited" onchange="Find();" />
                 <input type="button" class=" btn-dark btn-sm ml-2 buttonlightred" value="🔎" />
             </div>
@@ -209,25 +209,26 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Ext</th>
-                <th>Country</th>
+                <th>City</th>
             </tr>
             @foreach (var cliente in list.clients)
             {
-                <tr>
-                    <td>
-                        <label class="container_checkbox">
-                            <input id="chktable_@j.ToString()" onchange="chktable_changed();" type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </td>
-                    <td>@cliente.Company_Name</td>
-                    <td>@cliente.Contact_Name</td>
-                    <td>@cliente.Job_Title</td>
-                    <td>@cliente.Email</td>
-                    <td>@cliente.Phone</td>
-                    <td>@cliente.Ext</td>
-                    @*<td>@cliente.Country</td>*@
-                </tr>
+        <tr>
+            <td>
+                <label class="container_checkbox">
+                    <input id="chktable_@j.ToString()" onchange="chktable_changed();" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </td>
+            <td>@cliente.Company_Name</td>
+            <td>@cliente.Contact_Name</td>
+            <td>@cliente.Job_Title</td>
+            <td>@cliente.Email</td>
+            <td>@cliente.Phone</td>
+            <td>@cliente.Ext</td>
+            <td>@cliente.City</td>
+            @*<td>@cliente.Country</td>*@
+        </tr>
 
                 j++;
             }
@@ -264,7 +265,7 @@
                             </div>
                         </div>
                         @*FOTO *@
-                        <div class="form-group row m-2">
+                        @*<div class="form-group row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Photo:</label></div>
                             <div class="col-sm-7">
                                 <div class="custom-file">
@@ -272,7 +273,7 @@
                                     <label class="custom-file-label">Choose Photo...</label>
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Job:</label></div>
                             <div class="col">
@@ -338,7 +339,7 @@
                 <div class="row">
                     @*ADVANCED OPTIONS*@
                     <p>
-                        <a asp-controller="home" asp-action="details"
+                        <a asp-controller="home" asp-action="clientdetails"
                            class="btn btn-secondary text-black m-1 " id="btnformsview_@k.ToString()">View</a>
                         <a href="#" class="btn btn-secondary text-black m-1" id="btnformsedit_@k.ToString()">Save</a>
                         <a href="#" class="btn btn-secondary text-black m-1" id="btnformsdelete_@k.ToString()">Delete</a>
@@ -364,7 +365,7 @@
 
                 <div class="modal-content formclientcreate">
                     <span class="close" onclick="spanClose();">&times;</span>
-                    <form asp-action="clientindex" asp-controller="home" method="post" id="ClientForm" 
+                    <form enctype="multipart/form-data" asp-action="clientindex" asp-controller="home" method="post" id="ClientForm" 
                           onsubmit="return ValidationFields();">
                         <h1>Add Client</h1>
                         <hr />
@@ -397,15 +398,15 @@
                             </div>
 
                             @*FOTO*@
-                            <div class="form-group row">
-                                <label asp-for="Photo" class="col-sm-1 col-form-label">Photo:</label>
+                            @*<div class="form-group row">
+                                <label asp-for="Photo" class="col-sm-2 col-form-label">Photo:</label>
                                 <div class="col-sm-10">
                                     <div class="custom-file">
                                         <input asp-for="Photo" class="form-control custom-file-input">
                                         <label class="custom-file-label">Choose Photo...</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
 
                             <div class="row m-2">
                                 <label asp-for="Job_Title" class="col-sm-1 col-form-label  ">Job Title:</label>
@@ -456,16 +457,16 @@
                                     <input asp-for="City" class="form-control" id="itcity" placeholder="City *">
                                     <span asp-validation-for="City" id="city_field" class="text-danger d-none">The City field is required **</span>
                                 </div>
-                                @*<div class="btn-group dropup">
-                                    <label asp-for="State" class="col-sm-1 col-form-label  mr-3"></label>
+                                <div class="btn-group dropup">
+                                    <label asp-for="States" class="col-sm-1 col-form-label  mr-3"></label>
                                     <div class="col-sm-5">
-                                        <select asp-for="State"  id="selstate" class="custom-select ml-4 w-100"
-                                                >
+                                        <select asp-for="States"  id="selstate" class="custom-select ml-4 w-100"
+                                               asp-items="Html.GetEnumSelectList<States>()" >
                                             <option value="">State </option>
                                         </select>
-                                        <span asp-validation-for="State" id="state_field" class="text-danger d-none">The State field is required **</span>
+                                        <span asp-validation-for="States" id="state_field" class="text-danger d-none">The State field is required **</span>
                                     </div>
-                                </div>*@
+                                </div>
                             </div>
 
                             <div class="row m-1">
@@ -474,16 +475,16 @@
                                     <input asp-for="ZipCode" class="form-control" id="itzipcode" placeholder="ZipCode *">
                                     <span asp-validation-for="ZipCode" class="text-danger"></span>
                                 </div>
-                                @*<div class="btn-group dropup">
+                                <div class="btn-group dropup">
                                     <label asp-for="Country" class="col-sm-1 col-form-label  mr-3"></label>
                                     <div class="col-sm-5">
                                         <select asp-for="Country" id="selcountry" class="custom-select ml-4 w-100"
-                                                >
+                                                asp-items="Html.GetEnumSelectList<Country>()">
                                             <option value="">Country </option>
                                         </select>
                                         <span asp-validation-for="Country" id="country_field" class="text-danger d-none">The Country field is required **</span>
                                     </div>
-                                </div>*@
+                                </div>
                             </div>
                             <hr>
                             <div class="row m-1">
@@ -547,8 +548,15 @@
             <script src="~/lib/jquery/dist/jquery.js"></script>
             <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
             <script src="https://kit.fontawesome.com/b30f3a8456.js"></script>
-            <script type="text/javascript">
-        function chkblocks() {
+            <script type="text/javascript"> 
+            $(document).ready(function () {
+                $(".custom-file-input").on("change", function () {
+                    var filename = $(this).val().split("\\").pop();
+                    $(this).next(".custom-file-label").html(filename);
+                });
+            });
+
+            function chkblocks() {
             document.getElementById("chktable").checked = false;
             document.getElementById("chkforms").checked = false;
 

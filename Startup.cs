@@ -29,18 +29,19 @@ namespace AFFMUSA
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<AppDbContext>(options =>
+            options.UseSqlServer(_config.GetConnectionString("AFFMUSADbConnectionString")));
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddSingleton<ClientMethods, ClientMethodsImplementation>();
+            services.AddScoped<ClientMethods, SQLClientMethods>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContextPool<AppDbContext>(
-                options => options.UseSqlServer(_config.GetConnectionString("AFFMUSADbConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,14 +50,6 @@ namespace AFFMUSA
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseDeveloperExceptionPage();
-
-                //app.UseExceptionHandler("/Home/Error");
-                //// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                //app.UseHsts();
             }
 
             app.UseHttpsRedirection();
@@ -67,7 +60,7 @@ namespace AFFMUSA
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Clients}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=ClientIndex}");
             });
         }
     }

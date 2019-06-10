@@ -14,29 +14,26 @@ namespace AFFMUSA.Models
 
         [Required, MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
         public string Company_Name { get; set; }
-
         [Required, MaxLength(30, ErrorMessage = "Name cannot exceed 30 characters")]
         public string Contact_Name { get; set; }
-        [Required, MaxLength(20, ErrorMessage = "Name cannot exceed 20 characters")]
+        [Required, MaxLength(30, ErrorMessage = "Name cannot exceed 30 characters")]
         public string Job_Title { get; set; }
         [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
            ErrorMessage = "Invalid email format")]
         [Required]
         public string Email { get; set; }
         public string Phone { get; set; }
-        [MaxLength(5, ErrorMessage = "Extension of Phone Number can not contain more than 5 digits.")]
         public int Ext { get; set; }
         public string Fax { get; set; }
         [Required, MaxLength(30, ErrorMessage = "Name cannot exceed 30 characters")]
         public string City { get; set; }
         [Required]
-        public List<States> States { get; set; }
-        [Range(0, 100000, ErrorMessage = "ZipCode should not contain characters")]
+        public States? States { get; set; }
         public int ZipCode { get; set; }
         [Required]
-        public List<Country> Countries { get; set; }
+        public Country? Country { get; set; }
         public string Notes { get; set; }
-        public string Photo { get; set; }
+        //public IFromFile Photo { get; set; }
         [Required]
         public bool AllowBilling { get; set; }
     }

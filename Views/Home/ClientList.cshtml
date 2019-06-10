@@ -71,6 +71,15 @@
                         <input id="chkgenerate_@i.ToString()" value="check" onchange="chkgenerate();" type="checkbox">
                         <span class="checkmark"></span>
                     </label>
+                    @{
+                        var parms = new Dictionary<string, string>
+                                                    {
+                                    { "Id", cliente.ClientID.ToString() }
+                                };
+                    }
+                    <form asp-route="clientselecteddetails" asp-all-route-data="parms" method="post">
+                        <input type="submit" class="btn btn-dark text-black m-1 buttonlightred" id="btnviewtop" value="View" />
+                    </form>
                     <h3 id="blcokHcompany_@i.ToString()">@cliente.Company_Name</h3>
                 </div>
 
@@ -171,7 +180,7 @@
                             </div>
                         </div>
                         @*FOTO *@
-                        <div class="form-group row m-2">
+                        @*<div class="form-group row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Photo:</label></div>
                             <div class="col-sm-7">
                                 <div class="custom-file">
@@ -179,7 +188,7 @@
                                     <label class="custom-file-label">Choose Photo...</label>
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
                         <div class="row m-2">
                             <div class="col-sm-3"><label class="col-sm-1 col-form-label">Job:</label></div>
                             <div class="col">

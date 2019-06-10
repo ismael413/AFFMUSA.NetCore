@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AFFMUSA.Models.Lists;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,9 +13,26 @@ namespace AFFMUSA.Models
 
         public ClientMethodsImplementation()
         {
+            clients = new List<Client>(){
+                new Client() {
+                    ClientID = 1,
+                    Company_Name = "HR Company",
+                    Contact_Name = "Julio",
+                    Job_Title = "Encargado de Suministros",
+                    Email = "julio@hrcompany.com",
+                    Phone = "890-878-8979",
+                    Ext = 123,
+                    Fax = "7487583758",
+                    States = States.Miami,
+                    City = "Texas",
+                    Country = Country.United_States,
+                    ZipCode = 54000,
+                    Notes = "good worker"
+                }
+            };
         }
 
-        public Client Add(Client client)
+        public Client AddClient(Client client)
         {
             //ESPECIFICAR INDICE DE CLIENTE A AGREGAR EN LA 
             //LISTA DE CLIENTES
@@ -24,7 +42,7 @@ namespace AFFMUSA.Models
             return client;
         }
 
-        public Client Delete(int Id)
+        public Client DeleteClient(int Id)
         {
             //OBTENER CLIENTE DE UNA LISTA DE CLIENTES
             Client client = clients.FirstOrDefault(c => c.ClientID == Id);
@@ -43,12 +61,12 @@ namespace AFFMUSA.Models
             return clients.FirstOrDefault(c => c.ClientID == Id);
         }
 
-        public IEnumerable<Client> GetClients()
+        public IEnumerable<Client> GetClientsList()
         {
             return clients;
         }
 
-        public Client Update(Client client_changes)
+        public Client UpdateClient(Client client_changes)
         {
             //OBTENER CLIENTE DE LA LISTA CON EL ID ESPECIFICADO
             Client client = clients.FirstOrDefault(c => c.ClientID == client_changes.ClientID);
@@ -56,8 +74,18 @@ namespace AFFMUSA.Models
             //VER SI ESE CLIENTE EXISTE
             if (client != null)
             {
-                //APLICAR CAMBIO A DICHO CLIENTE
-  
+                client.Company_Name = client_changes.Company_Name;
+                client.Contact_Name = client_changes.Contact_Name;
+                client.Job_Title = client_changes.Job_Title;
+                client.Email = client_changes.Email;
+                client.Phone = client_changes.Phone;
+                client.Ext = client_changes.Ext;
+                client.Fax = client_changes.Fax;
+                client.States = client_changes.States;
+                client.City = client_changes.City;
+                client.Country = client_changes.Country;
+                client.ZipCode = client_changes.ZipCode;
+                client.Notes = client_changes.Notes;
             }
             //RETORNAR CAMBIOS
             return client;

@@ -9,9 +9,9 @@ namespace AFFMUSA.Models
     {
         int IdClientSelected { get; set; }
         Client GetClient(int Id);
-        IEnumerable<Client> GetClients();
-        Client Add(Client client);
-        Client Update(Client client_changes);
-        Client Delete(int Id);
+        IEnumerable<Client> GetClientsList();
+        Client AddClient(Client client);
+        Client UpdateClient(Client client_changes);
+        Client DeleteClient(int Id);
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AFFMUSA.Models.Lists
 {
-    public class States
+    public enum States
     {
-        public int StatesID { get; set; }
-
-        [Required, MaxLength(30, ErrorMessage = "The Country Name can just contain 30 characters.")]
-        public string StateName { get; set; }
+       Miami,
+       Houdstone,
+       New_York,
+       Washington
     }
 }

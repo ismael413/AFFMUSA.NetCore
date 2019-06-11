@@ -33,3 +33,15 @@ C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\H
 C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutTemplate.g.cshtml.cs
 C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Home\ClientIndex.g.cshtml.cs
 C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Home\ClientDetails.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Countries\Create.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Countries\Delete.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Countries\Details.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Countries\Edit.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Countries\Index.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Clients\Create.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Clients\Delete.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Clients\Details.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Clients\Edit.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Clients\Index.g.cshtml.cs
+C:\Users\user\source\repos\AFFMUSA\AFFMUSA\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs

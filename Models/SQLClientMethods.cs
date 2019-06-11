@@ -1,4 +1,5 @@
-﻿using MultiAplicacion.Models;
+﻿using PruebasNetCore.Models;
+using PruebasNetCore.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ namespace AFFMUSA.Models
 {
     public class SQLClientMethods : ClientMethods
     {
-        private readonly AppDbContext context;
+        private readonly ApplicationDbContext context;
 
-        public SQLClientMethods(AppDbContext context)
+        public SQLClientMethods(ApplicationDbContext context)
         {
             this.context = context;
         }
@@ -25,10 +26,10 @@ namespace AFFMUSA.Models
 
         public Client DeleteClient(int Id)
         {
-            Client client = context.Clients.Find(Id);
+            Client client = context.Client.Find(Id);
             if (client != null)
             {
-                context.Clients.Remove(client);
+                context.Client.Remove(client);
                 context.SaveChanges();
             }
             return client;
@@ -36,17 +37,17 @@ namespace AFFMUSA.Models
 
         public Client GetClient(int Id)
         {
-            return context.Clients.Find(Id);
+            return context.Client.Find(Id);
         }
 
         public IEnumerable<Client> GetClientsList()
         {
-            return context.Clients;
+            return context.Client;
         }
 
         public Client UpdateClient(Client client_changes)
         {
-            var client = context.Clients.Attach(client_changes);
+            var client = context.Client.Attach(client_changes);
             client.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
             return client_changes;

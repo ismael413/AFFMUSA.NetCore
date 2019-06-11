@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace AFFMUSA.Models
+namespace AFFMUSA.Models.Lists
 {
-    public enum Country
+    public enum Countries
     {
         United_States,
         Spain,

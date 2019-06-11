@@ -20,10 +20,13 @@
     <Compile Remove="Migrations\20190610030848_Implementation0.Designer.cs" />
     <Compile Remove="Migrations\20190610031048_Implementation0.cs" />
     <Compile Remove="Migrations\20190610031048_Implementation0.Designer.cs" />
+    <Compile Remove="Migrations\20190610131651_Implementation3.cs" />
+    <Compile Remove="Migrations\20190610131651_Implementation3.Designer.cs" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <PackageReference Include="Ext.NET" Version="4.8.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />

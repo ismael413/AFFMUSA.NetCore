@@ -1,4 +1,5 @@
 ﻿using AFFMUSA.Models.Lists;
+using PruebasNetCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,7 @@ namespace AFFMUSA.Models
                     Phone = "890-878-8979",
                     Ext = 123,
                     Fax = "7487583758",
-                    States = States.Miami,
                     City = "Texas",
-                    Country = Country.United_States,
                     ZipCode = 54000,
                     Notes = "good worker"
                 }
@@ -40,6 +39,7 @@ namespace AFFMUSA.Models
             //AGREAGAR CLIENTE A LA LISTA
             clients.Add(client);
             return client;
+            
         }
 
         public Client DeleteClient(int Id)
@@ -81,9 +81,7 @@ namespace AFFMUSA.Models
                 client.Phone = client_changes.Phone;
                 client.Ext = client_changes.Ext;
                 client.Fax = client_changes.Fax;
-                client.States = client_changes.States;
                 client.City = client_changes.City;
-                client.Country = client_changes.Country;
                 client.ZipCode = client_changes.ZipCode;
                 client.Notes = client_changes.Notes;
             }

@@ -1,0 +1,124 @@
+﻿@model PruebasNetCore.Models.Client
+
+@{
+    int IdClientSelected = 0;
+    ViewData["Title"] = "Create";
+    var parms = new Dictionary<string, string>()
+    {
+        { "Id", IdClientSelected.ToString()}
+    };
+}
+
+    <div class="wp-content">
+        <div class="container-fluid ">
+            <!-- The Modal -->
+            <div id="myModal2" class="modal d-block">
+                <!-- Modal content -->
+
+                <div class="modal-content formclientcreate">
+                    <span class="close" onclick="spanClose();">&times;</span>
+
+                    <h1>Create</h1>
+
+                    <h4>Client</h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-controller="home"  asp-all-route-data="parms" 
+                                 asp-route="clientselecteddetails" >
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Company_Name" class="control-label"></label>
+                                    <input asp-for="Company_Name" class="form-control" />
+                                    <span asp-validation-for="Company_Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Contact_Name" class="control-label"></label>
+                                    <input asp-for="Contact_Name" class="form-control" />
+                                    <span asp-validation-for="Contact_Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Job_Title" class="control-label"></label>
+                                    <input asp-for="Job_Title" class="form-control" />
+                                    <span asp-validation-for="Job_Title" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Phone" class="control-label"></label>
+                                    <input asp-for="Phone" class="form-control" />
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Ext" class="control-label"></label>
+                                    <input asp-for="Ext" class="form-control" />
+                                    <span asp-validation-for="Ext" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Fax" class="control-label"></label>
+                                    <input asp-for="Fax" class="form-control" />
+                                    <span asp-validation-for="Fax" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="City" class="control-label"></label>
+                                    <input asp-for="City" class="form-control" />
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ZipCode" class="control-label"></label>
+                                    <input asp-for="ZipCode" class="form-control" />
+                                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Notes" class="control-label"></label>
+                                    <input asp-for="Notes" class="form-control" />
+                                    <span asp-validation-for="Notes" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CountryID" class="control-label"></label>
+                                    <select asp-for="CountryID" class="form-control" asp-items="ViewBag.CountryID"></select>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="container_checkbox">
+                                        Allow Billing
+                                        <input class="form-check-input" asp-for="AllowBilling" /> 
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-primary buttonlightred" />
+                                </div>
+
+                                @{ 
+                                    IdClientSelected = Model.ClientID;
+                                }
+                            </form>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a asp-controller="home" asp-action="ClientIndex"
+                           class="btn btn-primary buttonlightred">Back to List</a>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+        <script>
+            $(document).ready(function () {
+                modal.style.zIndex = "30";
+                modal.style.display = "block";
+            })
+        </script>
+    }

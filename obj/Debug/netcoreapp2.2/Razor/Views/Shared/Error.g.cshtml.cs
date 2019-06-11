@@ -14,22 +14,17 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "C:\Users\user\source\repos\AFFMUSA\AFFMUSA\Views\_ViewImports.cshtml"
-using AFFMUSA;
+using PruebasNetCore;
 
 #line default
 #line hidden
 #line 2 "C:\Users\user\source\repos\AFFMUSA\AFFMUSA\Views\_ViewImports.cshtml"
-using AFFMUSA.Models;
-
-#line default
-#line hidden
-#line 3 "C:\Users\user\source\repos\AFFMUSA\AFFMUSA\Views\_ViewImports.cshtml"
-using AFFMUSA.Models.Lists;
+using PruebasNetCore.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"31d286e87066029d0313f4636230f90cf58ed726", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9a36f6c85a3f999cf5fef949b1c86b94e9ad5d0b", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

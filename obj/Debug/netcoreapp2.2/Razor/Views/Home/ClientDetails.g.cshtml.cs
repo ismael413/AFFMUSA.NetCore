@@ -14,22 +14,17 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "C:\Users\user\source\repos\AFFMUSA\AFFMUSA\Views\_ViewImports.cshtml"
-using AFFMUSA;
+using PruebasNetCore;
 
 #line default
 #line hidden
 #line 2 "C:\Users\user\source\repos\AFFMUSA\AFFMUSA\Views\_ViewImports.cshtml"
-using AFFMUSA.Models;
-
-#line default
-#line hidden
-#line 3 "C:\Users\user\source\repos\AFFMUSA\AFFMUSA\Views\_ViewImports.cshtml"
-using AFFMUSA.Models.Lists;
+using PruebasNetCore.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1d532fccebc06d6176a3fa51ff769e27e9d4587b", @"/Views/Home/ClientDetails.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"31d286e87066029d0313f4636230f90cf58ed726", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9a36f6c85a3f999cf5fef949b1c86b94e9ad5d0b", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_ClientDetails : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Client>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -81,7 +76,7 @@ using AFFMUSA.Models.Lists;
             WriteLiteral("            ");
             EndContext();
             BeginContext(303, 249, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d532fccebc06d6176a3fa51ff769e27e9d4587b7142", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d532fccebc06d6176a3fa51ff769e27e9d4587b7016", async() => {
                 BeginContext(520, 28, true);
                 WriteLiteral("&nbsp;&nbsp; Go Back To Menu");
                 EndContext();
@@ -181,7 +176,7 @@ using AFFMUSA.Models.Lists;
             WriteLiteral("                    <br />\r\n                </div>\r\n                <div class=\"card-footer text-center bg-dark\" style=\"background:#442222;\">\r\n                    ");
             EndContext();
             BeginContext(1760, 108, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d532fccebc06d6176a3fa51ff769e27e9d4587b12458", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d532fccebc06d6176a3fa51ff769e27e9d4587b12332", async() => {
                 BeginContext(1860, 4, true);
                 WriteLiteral("Back");
                 EndContext();
@@ -218,7 +213,7 @@ using AFFMUSA.Models.Lists;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(2156, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d532fccebc06d6176a3fa51ff769e27e9d4587b14568", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d532fccebc06d6176a3fa51ff769e27e9d4587b14442", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AFFMUSA.Models.Lists;
+using PruebasNetCore.Models;
 
 namespace MultiAplicacion.Models
 {
@@ -14,7 +15,7 @@ namespace MultiAplicacion.Models
         {
         }
         public DbSet<Client> Clients { get; set; }
-
+        public DbSet<Country> Countries { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Client>().HasData(
@@ -28,11 +29,16 @@ namespace MultiAplicacion.Models
                     Phone = "890-878-8979",
                     Ext = 123,
                     Fax = "7487583758",
-                    States = States.Miami,
                     City = "Texas",
-                    Country = Country.United_States,
                     ZipCode = 54000,
                     Notes = "good worker"
+                });
+
+            modelBuilder.Entity<Country>().HasData(
+                new Country
+                {
+                    CountryID = 1,
+                    CountryName = "United States"
                 });
         }
     }

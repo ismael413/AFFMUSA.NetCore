@@ -38,7 +38,7 @@ namespace AFFMUSA.Migrations
                         .IsRequired()
                         .HasMaxLength(30);
 
-                    b.Property<int>("Country");
+                    b.Property<int>("CountryID");
 
                     b.Property<string>("Email")
                         .IsRequired();
@@ -51,15 +51,16 @@ namespace AFFMUSA.Migrations
                         .IsRequired()
                         .HasMaxLength(30);
 
-                    b.Property<string>("Notes");
+                    b.Property<string>("Notes")
+                        .IsRequired();
 
                     b.Property<string>("Phone");
-
-                    b.Property<int>("States");
 
                     b.Property<int>("ZipCode");
 
                     b.HasKey("ClientID");
+
+                    b.HasIndex("CountryID");
 
                     b.ToTable("Clients");
 
@@ -71,16 +72,44 @@ namespace AFFMUSA.Migrations
                             City = "Texas",
                             Company_Name = "HR Company",
                             Contact_Name = "Julio",
-                            Country = 0,
+                            CountryID = 0,
                             Email = "julio@hrcompany.com",
                             Ext = 123,
                             Fax = "7487583758",
                             Job_Title = "Encargado de Suministros",
                             Notes = "good worker",
                             Phone = "890-878-8979",
-                            States = 0,
                             ZipCode = 54000
                         });
+                });
+
+            modelBuilder.Entity("AFFMUSA.Models.Country", b =>
+                {
+                    b.Property<int>("CountryID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CountryName")
+                        .IsRequired();
+
+                    b.HasKey("CountryID");
+
+                    b.ToTable("Countries");
+
+                    b.HasData(
+                        new
+                        {
+                            CountryID = 1,
+                            CountryName = "United States"
+                        });
+                });
+
+            modelBuilder.Entity("AFFMUSA.Models.Client", b =>
+                {
+                    b.HasOne("AFFMUSA.Models.Country", "Country")
+                        .WithMany("Clients")
+                        .HasForeignKey("CountryID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

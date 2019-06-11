@@ -1,12 +1,10 @@
-﻿using AFFMUSA.Models.Lists;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AFFMUSA.Models
+namespace PruebasNetCore.Models
 {
     public class Client
     {
@@ -27,12 +25,11 @@ namespace AFFMUSA.Models
         public string Fax { get; set; }
         [Required, MaxLength(30, ErrorMessage = "Name cannot exceed 30 characters")]
         public string City { get; set; }
-        [Required]
-        public States? States { get; set; }
         public int ZipCode { get; set; }
         [Required]
-        public Country? Country { get; set; }
         public string Notes { get; set; }
+        public int CountryID { get; set; }
+        public virtual Country Country { get; set; }
         //public IFromFile Photo { get; set; }
         [Required]
         public bool AllowBilling { get; set; }

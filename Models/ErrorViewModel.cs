@@ -1,6 +1,6 @@
 using System;
 
-namespace AFFMUSA.Models
+namespace PruebasNetCore.Models
 {
     public class ErrorViewModel
     {
